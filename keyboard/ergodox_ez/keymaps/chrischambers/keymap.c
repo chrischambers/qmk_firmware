@@ -195,7 +195,7 @@ const uint16_t PROGMEM fn_actions[] = {
   [SYMB] = ACTION_LAYER_TAP_TOGGLE(SYMB), // FN1 - Momentary Symbols Layer
   [PLVR] = ACTION_LAYER_TAP_TOGGLE(PLVR), // FN2 - Momentary Plover Layer
   [ARRW] = ACTION_LAYER_TAP_TOGGLE(ARRW), // FN3 - Momentary Arrows Layer
-  [4]    = ACTION_MODS_ONESHOT(TG(1)),    // Sticky Layer Toggle
+  [4]    = ACTION_LAYER_ONESHOT(1),       // Sticky Layer Toggle
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
