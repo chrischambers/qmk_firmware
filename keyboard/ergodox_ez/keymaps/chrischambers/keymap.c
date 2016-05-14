@@ -17,12 +17,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Tab    |   Q  |   W  |   E  |   R  |   T  | PLVR |           |      |   Y  |   U  |   I  |   O  |   P  |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | L1*   |   A  |   S  |   D  |   F  |   G   |------|           |------|   H  |   J  |   K  |   L  | ;  : |   L1*  |
+ * | L1*    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  | ;  : |   L1*  |
  * |--------+------+------+------+------+------|      |           | ARRW |------+------+------+------+------+--------|
- * | LShift |Z/Ctrl|   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  | /  ? | RShift |
+ * | Shift* |Z/Ctrl|   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  | /  ? | Shift* |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | Ctrl |      |  Gui  | Alt  | L1   |                                       |  L1  | Alt  | Gui  |      | Ctrl |
- *   `----------------------'------------'                                       `----------------------------------'
+ *   | Ctrl |      | Gui  | Alt  | L1   |                                       |  L1  | Alt  | Gui  |      | Ctrl |
+ *   `--------------------'------------'                                        `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | Home | End  |       | Left | Right|
  *                                 ,------|------|------|       |------+------+------.
@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_NO,
     KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    TG(PLVR),
     KC_FN4,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
-    KC_LSFT,   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_NO,
+    KC_FN5,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_NO,
     KC_LCTL,   KC_NO,   KC_LGUI, KC_LALT, MO(SYMB),
 
     /*-*/      /*-*/    /*-*/    /*-*/    /*-*/    KC_HOME, KC_END,
@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*-*/      KC_NO,   KC_6,    KC_7,     KC_8,    KC_9,    KC_0,     KC_NO,
     /*-*/      KC_NO,   KC_Y,    KC_U,     KC_I,    KC_O,    KC_P,     KC_NO,
     /*-*/      /*-*/    KC_H,    KC_J,     KC_K,    KC_L,    KC_SCLN,  KC_FN4,
-    /*-*/      TG(ARRW),KC_N,    KC_M,     KC_COMM, KC_DOT,  KC_SLSH,  KC_RSFT,
+    /*-*/      TG(ARRW),KC_N,    KC_M,     KC_COMM, KC_DOT,  KC_SLSH,  KC_FN5,
     /*-*/      /*-*/    /*-*/    MO(SYMB), KC_RALT, KC_RGUI, KC_NO,    KC_RCTL,
 
     KC_LEFT,   KC_RGHT,
@@ -196,6 +196,7 @@ const uint16_t PROGMEM fn_actions[] = {
   [PLVR] = ACTION_LAYER_TAP_TOGGLE(PLVR), // FN2 - Momentary Plover Layer
   [ARRW] = ACTION_LAYER_TAP_TOGGLE(ARRW), // FN3 - Momentary Arrows Layer
   [4]    = ACTION_LAYER_ONESHOT(1),       // Sticky Layer Toggle
+  [5]    = ACTION_MODS_ONESHOT(MOD_LSFT), // Sticky Shift
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
