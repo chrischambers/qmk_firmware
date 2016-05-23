@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*-*/      KC_NO,   KC_6,    KC_7,     KC_8,    KC_9,    KC_0,     KC_NO,
     /*-*/      KC_NO,   KC_Y,    KC_U,     KC_I,    KC_O,    KC_P,     KC_NO,
     /*-*/      /*-*/    KC_H,    KC_J,     KC_K,    KC_L,    KC_SCLN,  KC_FN4,
-    /*-*/      TG(ARRW),KC_N,    KC_M,     KC_COMM, KC_DOT,  KC_SLSH,  KC_FN5,
+    /*-*/      TG(ARRW),KC_N,    KC_M,     KC_COMM, KC_DOT,  KC_SLSH,  KC_FN6,
     /*-*/      /*-*/    /*-*/    MO(SYMB), KC_RALT, KC_RGUI, KC_NO,    KC_RCTL,
 
     KC_LEFT,   KC_RGHT,
@@ -197,6 +197,7 @@ const uint16_t PROGMEM fn_actions[] = {
   [ARRW] = ACTION_LAYER_TAP_TOGGLE(ARRW), // FN3 - Momentary Arrows Layer
   [4]    = ACTION_LAYER_ONESHOT(1),       // Sticky Layer Toggle
   [5]    = ACTION_MODS_ONESHOT(MOD_LSFT), // Sticky Shift
+  [6]    = ACTION_MODS_ONESHOT(MOD_RSFT), // Sticky Shift
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
