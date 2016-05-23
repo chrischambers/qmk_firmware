@@ -200,19 +200,7 @@ const uint16_t PROGMEM fn_actions[] = {
                                           // correctly)
 };
 
-const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
-{
-  // MACRODOWN only works in this function
-  switch(id) {
-    case 0:
-      if (record->event.pressed) {
-        register_code(KC_RSFT);
-      } else {
-        unregister_code(KC_RSFT);
-      }
-      break;
-  }
-  return MACRO_NONE;
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 };
 
 // Runs just one time when the keyboard initializes.
